@@ -24,7 +24,7 @@ This is the best way to get to the bleeding edge of what we are doing.
 
 1. Clone the source down to your machine. 
   `git clone git://github.com/__REPLACE__/__NAME__.git`
-2. Run build.bat
+2. Run `build.bat`. NOTE: You must have git on the path (open a regular command line and type git).
 
 
 # REQUIREMENTS
