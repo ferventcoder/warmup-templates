@@ -12,7 +12,9 @@ NOTE: If you are looking at the source - please run build.bat before opening the
 ----
 #INFO
 To use the templates, you need warmup. http://github.com/drusellers/warmup
-Once you have that, you need to point it to one of the templates. Happy coding!
+
+Once you have that, you need to point it to one of the templates. 
+Happy coding!
 
 ---
 #REQUIREMENTS
