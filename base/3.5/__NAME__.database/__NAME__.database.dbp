@@ -1,0 +1,19 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "__NAME__.database"
+   MSDTVersion = "80"
+   Begin Folder = "__NAME__"
+      Begin Folder = "functions"
+      End
+      Begin Folder = "permissions"
+      End
+      Begin Folder = "sprocs"
+      End
+      Begin Folder = "up"
+         Script = "0001___NAME___CreateStructures.sql"
+      End
+      Begin Folder = "views"
+      End
+   End
+   Begin DBRefFolder = "Database References"
+   End
+End
