@@ -1,5 +1,6 @@
 __NAME__
 =======
+![__NAME__ Logo](/docs/logo/__NAME___logo.png "__NAME__")
 
 # LICENSE
 Apache 2.0 - see docs\legal (just LEGAL in the zip folder)
