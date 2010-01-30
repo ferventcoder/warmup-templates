@@ -1,8 +1,8 @@
 Warmup Templates - Templates to go from zero to hero in a matter of seconds
+=============================================
 
-=======
-LICENSE
-=======
+#LICENSE
+----
 Apache 2.0 - see docs\legal (just LEGAL in the zip folder)
 
 =========
