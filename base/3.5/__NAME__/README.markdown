@@ -11,7 +11,7 @@ NOTE: If you are looking at the source - please run build.bat before opening the
 ## Overview
 __NAME__ is __REPLACE__.
 
-## Getting started with __NAME.
+## Getting started with __NAME__
 
 ### Downloads
 
