@@ -22,7 +22,7 @@ You can also obtain a copy from the build server at __REPLACE__.
 ### Source
 This is the best way to get to the bleeding edge of what we are doing.
 
-1. Clone the source down to your machine. git clone git://github.com/__REPLACE__/__NAME__.git
+1. Clone the source down to your machine. `git clone git://github.com/__REPLACE__/__NAME__.git`
 2. Run build.bat
 
 
