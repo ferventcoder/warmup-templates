@@ -4,7 +4,7 @@
     <section name="castle" type="Castle.Windsor.Configuration.AppDomain.CastleSectionHandler, Castle.Windsor" />
     <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net"/>
     <section name="sidepop" type="sidepop.configuration.SidePOPConfiguration, sidepop"/>
-    <section name="__NAME__" type="__NAME__.infrastructure.app.settings.__NAME__, __NAME__"/>
+    <section name="__NAME__" type="__NAME__.infrastructure.app.settings.__NAME__Configuration, __NAME__"/>
   </configSections>
 
   <connectionStrings>

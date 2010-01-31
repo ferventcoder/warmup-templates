@@ -3,7 +3,7 @@ namespace __NAME__.infrastructure.app.settings
     using System.Configuration;
 
     /// <summary>
-    /// Configuration Handler for Bombali
+    /// Configuration Handler for __NAME__
     /// </summary>
     public sealed class __NAME__Configuration : ConfigurationSection
     {

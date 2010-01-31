@@ -16,13 +16,22 @@
   <property name="dirs.deployment" value="${dirs.drop}\${folder.deployment}" />
   <property name="path.file.test_databases" value="${dirs.current}\..\product\testdatabase" />
 
-  <target name="go" depends="copy_nant_to_deploy, copy_notices" description="Packaging" />
+  <target name="go" depends="copy_nant_to_deploy, copy_rh_to_deploy, copy_notices" description="Packaging" />
 
   <target name="copy_nant_to_deploy">
     <echo message="Copying NAnt folder items to ${dirs.deployment}\NAnt."/>
     <copy todir="${dirs.deployment}">
       <fileset basedir="${dirs.lib}">
         <include name="NAnt/**" />
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="copy_rh_to_deploy">
+    <echo message="Copying RoundhousE folder items to ${dirs.deployment}\Console."/>
+    <copy todir="${dirs.deployment}\Console">
+      <fileset basedir="${dirs.lib}\RoundhousE">
+        <include name="**" />
       </fileset>
     </copy>
   </target>
