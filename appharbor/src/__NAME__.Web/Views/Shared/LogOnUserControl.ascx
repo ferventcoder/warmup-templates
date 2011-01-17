@@ -12,3 +12,4 @@
 <%
     }
 %>
+<span>v.<%: __NAME__.infrastructure.context.information.VersionInformation.get_version() %></span>

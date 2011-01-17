@@ -1,8 +1,7 @@
 namespace __NAME__.model
 {
-    public class SampleItem
+    public class SampleItem : ModelBase
     {
-        public long id { get; set; }
         public string name { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }

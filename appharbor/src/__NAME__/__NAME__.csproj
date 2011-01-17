@@ -34,6 +34,18 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\..\lib\NHibernate\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\lib\Castle\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\..\lib\Castle\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel">
+      <HintPath>..\..\lib\Castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\lib\Castle\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>..\..\lib\FluentNHibernate\FluentNHibernate.dll</HintPath>
     </Reference>
@@ -50,7 +62,9 @@
       <HintPath>..\..\lib\NHibernate\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,9 +75,46 @@
     <Compile Include="..\..\SolutionVersion.cs">
       <Link>SolutionVersion.cs</Link>
     </Compile>
+    <Compile Include="infrastructure.app\ApplicationContainer.cs" />
+    <Compile Include="infrastructure\configuration\DotNetConfiguration.cs" />
+    <Compile Include="infrastructure\configuration\SystemConfiguration.cs" />
+    <Compile Include="infrastructure\containers\custom\WindsorContainer.cs" />
+    <Compile Include="infrastructure\context\information\DatabaseInformation.cs" />
+    <Compile Include="infrastructure\context\information\UserInformation.cs" />
+    <Compile Include="infrastructure\context\information\VersionInformation.cs" />
+    <Compile Include="infrastructure\extensions\AuditExtensions.cs" />
+    <Compile Include="infrastructure\extensions\CastleExtensions.cs" />
+    <Compile Include="infrastructure\extensions\IEnumerableExtensions.cs" />
+    <Compile Include="infrastructure\extensions\StreamExtensions.cs" />
+    <Compile Include="infrastructure\extensions\StringExtensions.cs" />
+    <Compile Include="infrastructure.app\ApplicationParameters.cs" />
+    <Compile Include="infrastructure\containers\Container.cs" />
+    <Compile Include="infrastructure\containers\InversionContainer.cs" />
+    <Compile Include="infrastructure\filesystem\DotNetFileSystemAccess.cs" />
+    <Compile Include="infrastructure\filesystem\FileSystemAccess.cs" />
+    <Compile Include="infrastructure\logging\custom\FileLogger.cs" />
+    <Compile Include="infrastructure\logging\custom\Log4NetLogFactory.cs" />
+    <Compile Include="infrastructure\logging\custom\Log4NetLogger.cs" />
+    <Compile Include="infrastructure\logging\custom\MultipleLogger.cs" />
+    <Compile Include="infrastructure\logging\custom\MultipleLoggerLogFactory.cs" />
+    <Compile Include="infrastructure\logging\Log.cs" />
+    <Compile Include="infrastructure\logging\LogFactory.cs" />
+    <Compile Include="infrastructure\logging\Logger.cs" />
+    <Compile Include="infrastructure\persistence\custom\NHibernateRepository.cs" />
+    <Compile Include="infrastructure\persistence\IRepository.cs" />
+    <Compile Include="infrastructure\persistence\NHibernateSessionFactory.cs" />
+    <Compile Include="model\auditing\Auditable.cs" />
+    <Compile Include="infrastructure\persistence\listeners\AuditEventListener.cs" />
+    <Compile Include="model\auditing\DontAuditThis.cs" />
+    <Compile Include="model\auditing\LogManualChangesOnlyAttribute.cs" />
+    <Compile Include="model\auditing\NotAuditing.cs" />
+    <Compile Include="model\auditing\RestricedDataAttribute.cs" />
+    <Compile Include="model\IModel.cs" />
+    <Compile Include="model\ModelBase.cs" />
     <Compile Include="model\SampleItem.cs" />
     <Compile Include="orm\conventions\PrimaryKeyConvention.cs" />
-    <Compile Include="orm\mappings\SampleItemMapping.cs" />
+    <Compile Include="orm\mappings\BaseMap.cs" />
+    <Compile Include="orm\mappings\SampleItemMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

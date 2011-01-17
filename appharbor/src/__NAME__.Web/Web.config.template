@@ -7,13 +7,11 @@
 
 <configuration>
   <connectionStrings>
-    <add name="ApplicationServices"
-         connectionString="${connection.string}"
-         providerName="System.Data.SqlClient" />
+    <add name="db" connectionString="${connection.string}" providerName="System.Data.SqlClient" />
   </connectionStrings>
 
   <system.web>
-    <compilation debug="true" targetFramework="4.0">
+    <compilation debug="false" targetFramework="4.0">
       <assemblies>
         <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
         <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
@@ -28,7 +26,7 @@
     <membership>
       <providers>
         <clear/>
-        <add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="ApplicationServices"
+        <add name="AspNetSqlMembershipProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="db"
              enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false"
              maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10"
              applicationName="/" />
@@ -38,14 +36,14 @@
     <profile>
       <providers>
         <clear/>
-        <add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="ApplicationServices" applicationName="/" />
+        <add name="AspNetSqlProfileProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="db" applicationName="/" />
       </providers>
     </profile>
 
     <roleManager enabled="false">
       <providers>
         <clear/>
-        <add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="ApplicationServices" applicationName="/" />
+        <add name="AspNetSqlRoleProvider" type="System.Web.Security.SqlRoleProvider" connectionStringName="db" applicationName="/" />
         <add name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider" applicationName="/" />
       </providers>
     </roleManager>
