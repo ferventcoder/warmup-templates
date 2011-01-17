@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="Settings">
+  <!-- environment settings -->
+  <property name="environment" value="APPHARBOR" />
+  <!-- servers -->
+  <property name="server.app" value="http://__NAME__.apphb.com/" />
+  <property name="server.database" value="db000.appharbor.net" />
+
+  <property name="database.name" value="__REPLACE__" />
+  <property name="log.level" value="INFO" />
+  <property name="error.emails.to" value="__REPLACE__" />
+
+  <!-- base settings -->
+  <property name="project.name" value="__NAME__" overwrite="false" />
+  <property name="repository.path" value="https://__REPLACE__@appharbor.com/__REPLACE__.git" />
+  <property name="folder.database" value="__NAME__.Database" overwrite="false" />
+
+  <!-- database deployment -->
+  <property name="dirs.db" value="..\${folder.database}" overwrite="false"  />
+  <property name="file.version" value="_BuildInfo.xml" overwrite="false" />
+  <property name="connection.string" value="Server=db000.appharbor.net;Database=__REPLACE__;User ID=__REPLACE__;Password=__REPLACE__;" overwrite="false" />
+  <property name="restore.from.path" value="..\${database.name}.bak" overwrite="false" />
+  
+</project>

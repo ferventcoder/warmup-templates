@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="Settings">
+  <!-- environment settings -->
+  <property name="environment" value="LOCAL" />
+  <!-- servers -->
+  <property name="server.app" value="127.0.0.1" />
+  <property name="server.database" value="(local)" />
+
+  <property name="database.name" value="__NAME__" />
+  <property name="log.level" value="DEBUG" />
+  <property name="error.emails.to" value="__REPLACE__" />
+
+  <!-- base settings -->
+  <property name="project.name" value="__NAME__" overwrite="false" />
+  <property name="repository.path" value="https://__REPLACE__@appharbor.com/__REPLACE__.git" />
+  <property name="folder.database" value="__NAME__.Database" overwrite="false" />
+
+  <!-- database deployment -->
+  <property name="dirs.db" value="..\${folder.database}" />
+  <property name="file.version" value="_BuildInfo.xml" overwrite="false" />
+  <property name="connection.string" value="Server=(local);Database=__NAME__;Integrated Security=true;" overwrite="false" />
+  <property name="restore.from.path" value="..\${database.name}.bak" overwrite="false" />
+  
+</project>
