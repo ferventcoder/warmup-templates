@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.Web", "src\__NAME__.Web\__NAME__.Web.csproj", "{9FBBB821-86C1-415E-9AC0-3C8C9D957449}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NAME__.web", "src\__NAME__.web\__NAME__.web.csproj", "{9FBBB821-86C1-415E-9AC0-3C8C9D957449}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildDatabase", "src\BuildDatabase\BuildDatabase.csproj", "{C1305F24-71DB-4A49-849F-6D173E34CE43}"
 EndProject

@@ -9,8 +9,8 @@ namespace __NAME__.infrastructure.context.information
         {
             string version = string.Empty;
 
-            Assembly calling_assembly = Assembly.GetCallingAssembly();
-            string location = calling_assembly.Location;
+            Assembly reference_assembly = Assembly.GetExecutingAssembly();
+            string location = reference_assembly.Location;
             if (!string.IsNullOrEmpty(location))
             {
                 version = FileVersionInfo.GetVersionInfo(location).FileVersion;

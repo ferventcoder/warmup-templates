@@ -14,6 +14,7 @@
   <property name="dirs.build" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.code_build}" />
   <property name="folder.code_drop" value="code_drop" overwrite="false" />
   <property name="dirs.drop" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.code_drop}" overwrite="false" />
+  <property name="project.name" value="app" overwrite="false" />
   <property name="folder.app.drop" value="${project.name}" overwrite="false" />
   <property name="folder.database" value="__DATABASE_FOLDER_NAME__" overwrite="false" />
   <property name="dirs.database" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.database}" overwrite="false" />
@@ -31,9 +32,9 @@
   <property name="dirs.docs" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.documentation}" overwrite="false" />
   <property name="folder.references" value="lib" overwrite="false" />
   <property name="dirs.lib" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.references}" overwrite="false" />
-  <target name="go" depends="move_rh_to_deployment" />
+  <target name="go" depends="copy_rh_to_deployment, copy_dk_to_deployment" />
 
-  <target name="move_rh_to_deployment">
+  <target name="copy_rh_to_deployment">
     <echo message="Packaging roundhouse to ${dirs.drop}\${folder.deployment}\roundhouse."/>
     <copy todir="${dirs.drop}\${folder.deployment}\roundhouse">
       <fileset basedir="${dirs.lib}\roundhouse">
@@ -41,4 +42,26 @@
       </fileset>
     </copy>
   </target>
+  
+    <target name="copy_dk_to_deployment">
+    <echo message="Copying DropkicK folder items to ${dirs.deployment}\dk." />
+    <copy todir="${dirs.deployment}">
+      <fileset basedir="${dirs.references}">
+        <include name="dropkick/**" />
+      </fileset>
+    </copy>
+	
+    <echo message="Copying the deployment dll to the ${dirs.deployment}\dk" />
+    <copy file="${dirs.build}\${folder.app.drop}\${project.name}.Deployment.dll" todir="${dirs.deployment}\DeploymentSpecification" />
+	<copy file="${dirs.build}\${folder.app.drop}\${project.name}.pdb" todir="${dirs.deployment}\DeploymentSpecification" />
+	
+	<echo message="Copying the deployment settings to ${dirs.deployment}\settings" />
+    <copy todir="${dirs.deployment}\settings" flatten="true">
+      <fileset basedir="${dirs.drop}\${folder.environment_files}">
+          <include name="**\*.servermaps" />
+          <include name="**\*.js" />
+      </fileset>
+    </copy>
+  </target>
+  
 </project>

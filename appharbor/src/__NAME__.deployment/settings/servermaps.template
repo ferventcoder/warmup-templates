@@ -1,0 +1,8 @@
+﻿{
+	MessageQueue:"${server.msmq}",
+	MTPubSubMSMQ:"${server.mtpubsub}",
+	File:"${server.file}",
+	Website:"${server.web}",
+	VirtualDirectory:"${server.web}",
+	Host:"${server.app}"
+}

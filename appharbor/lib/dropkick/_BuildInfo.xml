@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<buildInfo>
+  <projectName>DropkicK</projectName>
+  <companyName>ACuriousMind Software and Fervent Coder Software</companyName>
+  <versionMajor>0</versionMajor>
+  <versionMinor>0</versionMinor>
+  <versionPatch>0</versionPatch>
+  <buildNumber>0</buildNumber>
+  <revision>34</revision>
+  <version>0.0.0.34</version>
+  <repositoryPath>http://github.com/chucknorris/dropkick</repositoryPath>
+  <microsoftNetFramework>net-3.5</microsoftNetFramework>
+  <msbuildConfiguration>Release</msbuildConfiguration>
+  <msbuildPlatform>Any CPU</msbuildPlatform>
+  <builtWith>UppercuT v. 1.0.6.0</builtWith>
+</buildInfo>
