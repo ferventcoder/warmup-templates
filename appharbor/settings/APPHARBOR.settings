@@ -3,7 +3,7 @@
   <!-- environment settings -->
   <property name="environment" value="APPHARBOR" />
   <!-- servers -->
-  <property name="server.app" value="http://__NAME__.apphb.com/" />
+  <property name="server.web" value="http://__NAME__.apphb.com/" />
   <property name="server.database" value="db000.appharbor.net" />
 
   <property name="database.name" value="__REPLACE__" />
@@ -21,4 +21,10 @@
   <property name="connection.string" value="Server=db000.appharbor.net;Database=__REPLACE__;User ID=__REPLACE__;Password=__REPLACE__;" overwrite="false" />
   <property name="restore.from.path" value="..\${database.name}.bak" overwrite="false" />
   
+  <!-- web deployment -->
+  <property name="app.virtualdirectory.name" value="${project.name}" />
+  <property name="escaped.deploy.logs.path" value="C$\\web\\${project.name}\logs" />
+  <property name="deploy.web.path" value="C$\web\${project.name}" />
+  <property name="escaped.deploy.web.path" value="C$\\web\\${project.name}" />
+
 </project>

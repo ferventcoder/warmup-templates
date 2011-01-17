@@ -32,7 +32,7 @@
   <property name="dirs.docs" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.documentation}" overwrite="false" />
   <property name="folder.references" value="lib" overwrite="false" />
   <property name="dirs.references" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.references}" overwrite="false" />
-  <target name="go" depends="copy_rh_to_deployment, copy_dk_to_deployment" />
+  <target name="go" depends="copy_rh_to_deployment, copy_dk_to_deployment, remove_app_harbor_app_deploy, fix_install_docs" />
 
   <target name="copy_rh_to_deployment">
     <echo message="Packaging roundhouse to ${dirs.drop}\${folder.deployment}\roundhouse."/>
@@ -43,19 +43,19 @@
     </copy>
   </target>
   
-    <target name="copy_dk_to_deployment">
-    <echo message="Copying DropkicK folder items to ${dirs.drop}\${folder.deployment}\dk." />
-    <copy todir="${dirs.drop}\${folder.deployment}\dk">
+  <target name="copy_dk_to_deployment">
+    <echo message="Copying DropkicK folder items to ${dirs.drop}\${folder.deployment}\dropkick." />
+    <copy todir="${dirs.drop}\${folder.deployment}\dropkick">
       <fileset basedir="${dirs.references}">
         <include name="dropkick/**" />
       </fileset>
     </copy>
-	
-    <echo message="Copying the deployment dll to the ${dirs.deployment}\dk" />
+
+    <echo message="Copying the deployment dll to the ${dirs.deployment}\DeploymentSpecification" />
     <copy file="${dirs.build}\${folder.app.drop}\${project.name}.Deployment.dll" todir="${dirs.drop}\${folder.deployment}\DeploymentSpecification" />
-	<copy file="${dirs.build}\${folder.app.drop}\${project.name}.pdb" todir="${dirs.deployment}\DeploymentSpecification" />
-	
-	<echo message="Copying the deployment settings to ${dirs.deployment}\settings" />
+  <copy file="${dirs.build}\${folder.app.drop}\${project.name}.pdb" todir="${dirs.deployment}\DeploymentSpecification" />
+
+  <echo message="Copying the deployment settings to ${dirs.deployment}\settings" />
     <copy todir="${dirs.drop}\${folder.deployment}\settings" flatten="true">
       <fileset basedir="${dirs.drop}\${folder.environment_files}">
           <include name="**\*.servermaps" />
@@ -63,5 +63,26 @@
       </fileset>
     </copy>
   </target>
+   
+  <target name="remove_app_harbor_app_deploy">
+    <delete failonerror="false">
+      <fileset basedir="${dirs.drop}\${folder.deployment}">
+        <include name="APPHARBOR.${project.name}.AppDeploy*" />
+      </fileset>
+    </delete>
+  </target>
   
+  <target name="fix_install_docs">
+    <delete failonerror="false">
+      <fileset basedir="${dirs.drop}\${folder.documentation}\installation">
+        <exclude name="APPHARBOR.APPHARBOR.*" />
+        <include name="*.APPHARBOR.*" />
+        <include name="APPHARBOR.*" />
+        <include name="${project.name}.Install.docx.xml" />
+      </fileset>
+    </delete>
+    
+    <move file="${dirs.drop}\${folder.documentation}\installation\APPHARBOR.APPHARBOR.${project.name}.Install.docx.xml" tofile="${dirs.drop}\${folder.documentation}\installation\APPHARBOR.${project.name}.Install.docx.xml" failonerror="false" />
+  </target>
+   
 </project>

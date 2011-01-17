@@ -3,7 +3,7 @@
   <!-- environment settings -->
   <property name="environment" value="LOCAL" />
   <!-- servers -->
-  <property name="server.app" value="127.0.0.1" />
+  <property name="server.web" value="127.0.0.1" />
   <property name="server.database" value="(local)" />
 
   <property name="database.name" value="__NAME__" />
@@ -20,5 +20,11 @@
   <property name="file.version" value="_BuildInfo.xml" overwrite="false" />
   <property name="connection.string" value="Server=(local);Database=__NAME__;Integrated Security=True;" overwrite="false" />
   <property name="restore.from.path" value="..\${database.name}.bak" overwrite="false" />
+
+  <!-- web deployment -->
+  <property name="app.virtualdirectory.name" value="${project.name}" />
+  <property name="escaped.deploy.logs.path" value="C$\\web\\${project.name}\logs" />
+  <property name="deploy.web.path" value="C$\web\${project.name}" />
+  <property name="escaped.deploy.web.path" value="C$\\web\\${project.name}" />
   
 </project>

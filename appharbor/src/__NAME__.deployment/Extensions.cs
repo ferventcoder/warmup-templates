@@ -1,4 +1,4 @@
-﻿namespace FHLBank.Cue.Deployment
+﻿namespace __NAME__.deployment
 {
     using System;
     using dropkick;
