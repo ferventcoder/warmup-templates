@@ -1,4 +1,4 @@
-﻿namespace __NAME__.Web
+﻿namespace __NAME__.web
 {
     using System.Web.Mvc;
     using System.Web.Routing;

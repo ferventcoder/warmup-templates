@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace __NAME__.Web.Models
+namespace __NAME__.web.Models
 {
 
     #region Models

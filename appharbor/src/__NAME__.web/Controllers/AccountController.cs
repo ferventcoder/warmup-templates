@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 
-namespace __NAME__.Web.Controllers
+namespace __NAME__.web.Controllers
 {
     using Models;
 
