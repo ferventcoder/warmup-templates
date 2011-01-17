@@ -31,13 +31,13 @@
   <property name="folder.documentation" value="docs" overwrite="false" />
   <property name="dirs.docs" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.documentation}" overwrite="false" />
   <property name="folder.references" value="lib" overwrite="false" />
-  <property name="dirs.lib" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.references}" overwrite="false" />
+  <property name="dirs.references" value="${dirs.current}${path.separator}${path.to.toplevel}${path.separator}${folder.references}" overwrite="false" />
   <target name="go" depends="copy_rh_to_deployment, copy_dk_to_deployment" />
 
   <target name="copy_rh_to_deployment">
     <echo message="Packaging roundhouse to ${dirs.drop}\${folder.deployment}\roundhouse."/>
     <copy todir="${dirs.drop}\${folder.deployment}\roundhouse">
-      <fileset basedir="${dirs.lib}\roundhouse">
+      <fileset basedir="${dirs.references}\roundhouse">
         <include name="*.*" />
       </fileset>
     </copy>
