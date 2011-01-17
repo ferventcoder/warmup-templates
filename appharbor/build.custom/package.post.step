@@ -44,19 +44,19 @@
   </target>
   
     <target name="copy_dk_to_deployment">
-    <echo message="Copying DropkicK folder items to ${dirs.deployment}\dk." />
-    <copy todir="${dirs.deployment}">
+    <echo message="Copying DropkicK folder items to ${dirs.drop}\${folder.deployment}\dk." />
+    <copy todir="${dirs.drop}\${folder.deployment}\dk">
       <fileset basedir="${dirs.references}">
         <include name="dropkick/**" />
       </fileset>
     </copy>
 	
     <echo message="Copying the deployment dll to the ${dirs.deployment}\dk" />
-    <copy file="${dirs.build}\${folder.app.drop}\${project.name}.Deployment.dll" todir="${dirs.deployment}\DeploymentSpecification" />
+    <copy file="${dirs.build}\${folder.app.drop}\${project.name}.Deployment.dll" todir="${dirs.drop}\${folder.deployment}\DeploymentSpecification" />
 	<copy file="${dirs.build}\${folder.app.drop}\${project.name}.pdb" todir="${dirs.deployment}\DeploymentSpecification" />
 	
 	<echo message="Copying the deployment settings to ${dirs.deployment}\settings" />
-    <copy todir="${dirs.deployment}\settings" flatten="true">
+    <copy todir="${dirs.drop}\${folder.deployment}\settings" flatten="true">
       <fileset basedir="${dirs.drop}\${folder.environment_files}">
           <include name="**\*.servermaps" />
           <include name="**\*.js" />
