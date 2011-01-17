@@ -24,10 +24,10 @@
                         DeploymentStepsFor(Website, s =>
                        {
                            s.CopyDirectory("..\\_PublishedWebSites\\__NAME__.web")
-                               .To(@"{{WebsitePath}}")
+                               .To(settings.WebsitePath)
                                .DeleteDestinationBeforeDeploying();
 
-                           s.CopyFile(@"..\EnvironmentFiles\{{Environment}}\{{Environment}}.web.config")
+                           s.CopyFile(@"..\environment.files\{{Environment}}\{{Environment}}.web.config")
                                .ToDirectory(@"{{WebsitePath}}")
                                .RenameTo(@"web.config");
 
@@ -47,11 +47,11 @@
                        {
                            s.Iis7Site("Default")
                             .VirtualDirectory(settings.VirtualDirectoryName)
+                            .SetPathTo(settings.WebsitePath)
                             .SetAppPoolTo("__NAME__.{{Environment}}", a => { 
                                                         a.Enable32BitAppOnWin64();
                                                         a.UseClassicPipeline();
-                                                        })
-                            .SetPathTo(@"{{WebsitePath}}");
+                                                        });
                        });
                    });
         }

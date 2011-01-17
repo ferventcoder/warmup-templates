@@ -14,7 +14,7 @@
 
         public static void CopyEnvironmentSpecificFile(this ProtoServer s, string destination, string environment, string filename)
         {
-            s.CopyFile(@".\..\EnvironmentFiles\{0}\{0}.{1}".FormatWith(environment, filename))
+            s.CopyFile(@".\..\environment.files\{0}\{0}.{1}".FormatWith(environment, filename))
                 .ToDirectory(destination);
 
             s.RenameFile(@"{0}\{1}.{2}".FormatWith(destination, environment, filename))

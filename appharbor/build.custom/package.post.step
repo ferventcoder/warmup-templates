@@ -44,8 +44,8 @@
   </target>
   
   <target name="copy_dk_to_deployment">
-    <echo message="Copying DropkicK folder items to ${dirs.drop}\${folder.deployment}\dropkick." />
-    <copy todir="${dirs.drop}\${folder.deployment}\dropkick">
+    <echo message="Copying DropkicK folder items to ${dirs.drop}\${folder.deployment}." />
+    <copy todir="${dirs.drop}\${folder.deployment}">
       <fileset basedir="${dirs.references}">
         <include name="dropkick/**" />
       </fileset>
@@ -53,7 +53,7 @@
 
     <echo message="Copying the deployment dll to the ${dirs.deployment}\DeploymentSpecification" />
     <copy file="${dirs.build}\${folder.app.drop}\${project.name}.Deployment.dll" todir="${dirs.drop}\${folder.deployment}\DeploymentSpecification" />
-  <copy file="${dirs.build}\${folder.app.drop}\${project.name}.pdb" todir="${dirs.deployment}\DeploymentSpecification" />
+  <copy file="${dirs.build}\${folder.app.drop}\${project.name}.pdb" todir="${dirs.drop}\${folder.deployment}\DeploymentSpecification" />
 
   <echo message="Copying the deployment settings to ${dirs.deployment}\settings" />
     <copy todir="${dirs.drop}\${folder.deployment}\settings" flatten="true">

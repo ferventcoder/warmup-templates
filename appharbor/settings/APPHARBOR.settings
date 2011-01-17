@@ -23,7 +23,7 @@
   
   <!-- web deployment -->
   <property name="app.virtualdirectory.name" value="${project.name}" />
-  <property name="escaped.deploy.logs.path" value="C$\\web\\${project.name}\logs" />
+  <property name="escaped.deploy.logs.path" value="C$\\web\\${project.name}\\logs" />
   <property name="deploy.web.path" value="C$\web\${project.name}" />
   <property name="escaped.deploy.web.path" value="C$\\web\\${project.name}" />
 

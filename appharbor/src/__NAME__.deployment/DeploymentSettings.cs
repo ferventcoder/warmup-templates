@@ -1,7 +1,6 @@
 ﻿namespace __NAME__.deployment
 {
     using dropkick.Configuration;
-    using dropkick.Configuration.Dsl.Security;
 
     public class DeploymentSettings : 
         DropkickConfiguration
