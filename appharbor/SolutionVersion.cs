@@ -17,9 +17,9 @@ using System.Security;
 [assembly: ComVisibleAttribute(false)]
 [assembly: CLSCompliantAttribute(true)]
 [assembly: AssemblyCompanyAttribute("__NAME__")]
-[assembly: AssemblyVersionAttribute("0.0.0.29")]
-[assembly: AssemblyFileVersionAttribute("0.0.0.29")]
-[assembly: AssemblyInformationalVersionAttribute("0.0.0.9689d4cc8b56267082293af85a2b748f5bab4306")]
+[assembly: AssemblyVersionAttribute("0.0.0.31")]
+[assembly: AssemblyFileVersionAttribute("0.0.0.31")]
+[assembly: AssemblyInformationalVersionAttribute("0.0.0.c032e5c49ea9e4b3fab1bbd05db18520b75cc386")]
 [assembly: AssemblyTitleAttribute("__NAME__")]
 [assembly: AssemblyProductAttribute("__NAME__")]
 [assembly: AssemblyDescriptionAttribute("__NAME__ is a product of __NAME__ - https://__REPLACE__@appharbor.com/__REPLACE__" +
