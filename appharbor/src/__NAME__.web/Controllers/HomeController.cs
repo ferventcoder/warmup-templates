@@ -12,6 +12,7 @@ namespace __NAME__.web.Controllers
         public ActionResult Index()
         {
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
+            throw new System.IndexOutOfRangeException("yo!");
 
             return View();
         }

@@ -88,6 +88,19 @@
     </handlers>
   </system.webServer>
 
+  <elmah>
+    <security allowRemoteAccess="1" />
+    <errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="db" />
+  </elmah>
+
+  <location path="elmah.axd">
+    <system.web>
+      <authorization>
+        <deny users="?" />
+      </authorization>
+    </system.web>
+  </location>
+
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
       <dependentAssembly>
