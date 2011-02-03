@@ -22,25 +22,6 @@ GO
 SET ANSI_NULL_DFLT_ON ON
 GO
 
-DECLARE @dbname nvarchar(128)
-DECLARE @dboptions nvarchar(1024)
-
-SET @dboptions = N'/**/'
-SET @dbname = N'aspnetdb'
-
-IF (NOT EXISTS (SELECT name
-                FROM master.dbo.sysdatabases
-                WHERE name = @dbname))
-BEGIN
-  PRINT 'Creating the ' + @dbname + ' database...'
-  DECLARE @cmd nvarchar(500)
-  SET @cmd = 'CREATE DATABASE [' + @dbname + '] ' + @dboptions
-  EXEC(@cmd)
-END
-GO
-
-USE [aspnetdb]
-GO
 
 /*************************************************************/
 /*************************************************************/

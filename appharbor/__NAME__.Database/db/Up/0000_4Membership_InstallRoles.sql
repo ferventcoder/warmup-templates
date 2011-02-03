@@ -30,21 +30,6 @@ GO
 /*************************************************************/
 /*************************************************************/
 
-DECLARE @dbname nvarchar(128)
-
-SET @dbname = N'aspnetdb'
-
-IF (NOT EXISTS (SELECT name
-                FROM master.dbo.sysdatabases
-                WHERE ('[' + name + ']' = @dbname OR name = @dbname)))
-BEGIN
-  RAISERROR('The database ''%s'' cannot be found. Please run InstallCommon.sql first.', 18, 1, @dbname)
-END
-GO
-
-USE [aspnetdb]
-GO
-
 IF (NOT EXISTS (SELECT name
                 FROM sysobjects
                 WHERE (name = N'aspnet_Applications')

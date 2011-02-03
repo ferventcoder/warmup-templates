@@ -6,6 +6,15 @@
   -->
 
 <configuration>
+  <configSections>
+    <sectionGroup name="elmah">
+      <section name="security" requirePermission="false" type="Elmah.SecuritySectionHandler, Elmah" />
+      <section name="errorLog" requirePermission="false" type="Elmah.ErrorLogSectionHandler, Elmah" />
+      <section name="errorMail" requirePermission="false" type="Elmah.ErrorMailSectionHandler, Elmah" />
+      <section name="errorFilter" requirePermission="false" type="Elmah.ErrorFilterSectionHandler, Elmah" />
+    </sectionGroup>
+  </configSections>
+
   <connectionStrings>
     <add name="db" connectionString="${connection.string}" providerName="System.Data.SqlClient" />
   </connectionStrings>
@@ -22,6 +31,8 @@
     <authentication mode="Forms">
       <forms loginUrl="~/Account/LogOn" timeout="2880" />
     </authentication>
+
+    <customErrors mode="On" defaultRedirect="~/Error" />
 
     <membership>
       <providers>
@@ -56,11 +67,25 @@
         <add namespace="System.Web.Routing" />
       </namespaces>
     </pages>
+
+    <httpModules>
+      <add name="ErrorLog" type="Elmah.ErrorLogModule, Elmah" />
+    </httpModules>
+    
+    <httpHandlers>
+      <add verb="POST,GET,HEAD" path="elmah.axd" type="Elmah.ErrorLogPageFactory, Elmah" />
+    </httpHandlers>
+    
   </system.web>
 
   <system.webServer>
-    <validation validateIntegratedModeConfiguration="false"/>
-    <modules runAllManagedModulesForAllRequests="true"/>
+    <modules runAllManagedModulesForAllRequests="true">
+      <add name="ErrorLog" type="Elmah.ErrorLogModule, Elmah" />
+    </modules>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+      <add name="Elmah" verb="POST,GET,HEAD" path="elmah.axd" type="Elmah.ErrorLogPageFactory, Elmah" />
+    </handlers>
   </system.webServer>
 
   <runtime>
@@ -71,5 +96,5 @@
       </dependentAssembly>
     </assemblyBinding>
   </runtime>
+  
 </configuration>
-

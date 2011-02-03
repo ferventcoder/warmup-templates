@@ -21,6 +21,8 @@
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute("UnhandledExceptions","Error", new {Controller = "Error", action= "Index"});
+
         }
 
         protected void Application_Start()
