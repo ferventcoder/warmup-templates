@@ -1,0 +1,4 @@
+﻿{
+	Website:"${server.web}",
+	VirtualDirectory:"${server.web}"
+}

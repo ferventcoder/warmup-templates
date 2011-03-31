@@ -1,0 +1,5 @@
+﻿{
+	LogDirectory : "~\\${escaped.deploy.logs.path}",
+	WebsitePath : "~\\${escaped.deploy.web.path}",
+	VirtualDirectoryName : "${app.virtualdirectory.name}"
+}
