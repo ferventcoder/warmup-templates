@@ -20,10 +20,10 @@ $downloader.DownloadFile($url, $file)
 
 write-host "Installing $fileName silently..."
 if ($fileType -like 'msi') {
-  msiexec /i  "$file" /quiet
+	#msiexec /i  "$file" /quiet
+	Start-Process -FilePath msiexec -ArgumentList "/i `"$file`"  /quiet" -Wait
 }
 if ($fileType -like 'exe') {
-  #& "$file" "/S" #"/s /S /q /Q /quiet /silent /SILENT /VERYSILENT" # try any of these to get the silent installer
   Start-Process -FilePath $file -ArgumentList "/S" -Wait #"/s /S /q /Q /quiet /silent /SILENT /VERYSILENT" # try any of these to get the silent installer
 }
 
