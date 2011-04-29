@@ -5,6 +5,12 @@
  
   Install-ChocolateyZipPackage '__NAME__' 'URL' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   
+  #other helpers
+  #Get-ChocolateyWebFile '__NAME__' 'EXE_OR_MSI' '_DOWNLOADTOFILEFULLPATH_' 'URL' '64BIT_URL_DELETE_IF_NO_64BIT'
+  #Install-ChocolateyInstallPackage '__NAME__' 'EXE_OR_MSI' 'SILENT_ARGS' '_FULLFILEPATH_'
+  #$scriptPath = (Split-Path -parent $MyInvocation.MyCommand.Definition)
+  #Get-ChocolateyUnzip "FULL_LOCATION_TO_ZIP.zip" $scriptPath
+  
   #------- ADDITIONAL SETUP -------#
 
   #$processor = Get-WmiObject Win32_Processor
